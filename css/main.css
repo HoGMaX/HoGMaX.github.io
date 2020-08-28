@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin:0;
+    outline: none!important;
+    -moz-outline:none!important;
+}
+
+body{position: relative;}
+.box{
+    position: absolute;
+    max-width: 300px;
+    max-height: 600px;
+    border: #757575 solid 2px;
+    padding: 10px 20px;
+    left: 533px;
+    top: 50px;
+    
+}
+.box input{
+    max-width: 270px;
+    margin:20px 10px 10px;
+}
+    
+.box-btn{
+    margin:20px 10px ;
+    color:#b32121ef;
+    border: #b32121ef solid 1px;
+    padding:5px 8px;
+    border-radius: 5px;
+
+}
+.box-btn:hover{
+    background-color: #b32121ef;
+    color:white;
+}
+.text{text-align: left;}
+.masseg{
+    display: none;
+    padding: 20px;
+    background-color: silver;
+    color: black;
+    font-size: 16px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
