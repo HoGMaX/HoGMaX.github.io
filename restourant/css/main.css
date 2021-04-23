@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: "Banny";
-    src: url("/resources/fonts/Banny-BoldRound.woff") format("woff"),
-         url("/resources/fonts/Banny-LightRound.woff") format("woff");
+    src: url("../resources/fonts/Banny-BoldRound.woff") format("woff"),
+         url("../resources/fonts/Banny-LightRound.woff") format("woff");
   }
 
 *{
@@ -36,7 +36,7 @@ ul li{
 header{
     width: 100%;
     height: 800px;
-    background-image: url("/resources/header-bg.svg");
+    background-image: url("../resources/header-bg.svg");
 }
 
 .header_conteiner{
@@ -258,7 +258,7 @@ main .section_column{
 }
 /* 3-я часть*/
 main .section_column .our_team{
-    background-image: url("/resources/specialtys-bg.svg");
+    background-image: url("../resources/specialtys-bg.svg");
     height: 675px;
     width: 100%;
     color:#fff;
