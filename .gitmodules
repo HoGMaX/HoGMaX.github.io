@@ -1,0 +1,3 @@
+[submodule "MySummary"]
+	path = MySummary
+	url = git@github.com:HoGMaX/MySummary.git
