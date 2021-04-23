@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    color: #041E50;
+    font-weight: 400;
+}
+a{text-decoration: none;color: #041E50;}
+ul{list-style-type: none;}
+
+/* top-header */
+
+header{width: 100%;}
+header .top-header{
+    width: 100%;
+    background-color: #041E50;
+}
+header .top-header .user-menu{
+    width: 80%;
+    margin: 0 10%;
+    text-align: right;
+    padding: 10px 0;
+}
+header .top-header .user-menu a{
+    color:#fff;
+    padding: 15px 50px;
+    font-size: 14px;
+    border-left: 1px solid rgba(224, 224, 224, 0.5);
+
+}
+header .top-header .user-menu a>i{margin-right: 10px;}
+header .top-header .user-menu a:last-child{
+    border-right: 1px solid rgba(224, 224, 224, 0.5);
+}
+
+/*middle-header*/
+
+header .middle-header{
+    width: 80%;
+    margin: 0 10%;
+}
+header .middle-header .main-header{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+header .middle-header .main-header .logo{
+    width: 72px;
+    height: 30px;
+}
+header .middle-header .main-header .header-menu{
+    display: flex;
+    justify-content: space-between;
+
+}
+header .middle-header .main-header .header-menu li{
+    margin: 0 15px;
+    color: #041E50;
+}
+header .middle-header .main-header .header-call{
+    background-color: #FF5252;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    width: 256px;
+    height: 80px;
+    text-align: center;
+    font-weight: 700;
+}
+header .middle-header .main-header .header-call span{font-weight: 400;}
+
+/* Bottom-headr */
+header .bottom-header{
+    background-color: #C4C4C4;
+    padding:85px 0 170px 0;
+}
+
+header .bottom-header .first-screan{
+    width: 80%;
+    margin: 0px 10%;
+}
+header .bottom-header .first-screan .about{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 605px;
+    height: 329px;
+    padding: 40px 57px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+}
+header .bottom-header .first-screan .about h3{
+    font-size: 32px;
+    font-weight: 700;
+}
+.button{
+    color: #fff;
+    font-weight: 700;
+    background-color: #FF5252;
+    text-align: center;
+    border-radius: 10px;
+ }
+ .more{
+    width: 243px;
+    height: 59px;
+    line-height: 59px;
+ }
+
+ /* main content */
+
+.conteiner{
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+
+}
+main .conteiner .conteiner-name{
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+}
+.section{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+main .conteiner .card{
+    background-color: #fff;
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    height: 551px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .conteiner .card .card-content{
+    position: relative;
+    display: flex;
+    width: 265px;
+    height: 507px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+main .conteiner .card .card-content .campare label{margin: 0 10px;} 
+.buy{
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+}
+
+main .conteiner .card img{
+    width: 264px;
+    height: 264px;
+}
+
+main .conteiner .card .vector{
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    top: 93px;
+}
+
+/* Footer*/
+
+footer{
+    background-color: #041E50;
+    color:#fff;
+    letter-spacing: 0.02em;
+}
+footer a{
+    color:#fff;
+    margin: 5px 0;
+}
+
+footer .footer-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 3;
+    font-weight: 400;
+}
+footer .footer-block p>span{font-weight: 700;}
+footer .footer-block-social{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    font-weight: 700;
+}

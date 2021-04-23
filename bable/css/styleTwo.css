@@ -1,0 +1,30 @@
+.main{
+    display: flex;
+    width: calc(100%-25);
+    margin: 0 12,4%;
+    align-items: center;
+    flex-direction: column;
+}
+.main__button{
+ display: flex;
+ width: 100%;
+ justify-content: space-between;
+ border: none;
+ border-top-style: none;
+ border-bottom-style: none;
+ border-top: 2px solid silver;
+ border-bottom: 2px solid silver;
+ padding: 20px 0;
+ background-color: #fff;
+ margin: 20px 0;
+ font-size: large;
+ font-weight: 700;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ cursor: pointer;
+}
+.main__button:hover {
+    color: #2c2c2c;
+    width:calc(100% - 15%);
+    transform: scale(110%);
+    transition: transform 800ms;
+}

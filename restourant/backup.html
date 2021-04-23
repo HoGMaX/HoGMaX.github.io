@@ -1,0 +1,62 @@
+<div class="header_main">
+    <div class="header_left_menu">
+        <a class="header_button" href="#">HOME</a>
+        <a class="header_button" href="#">ABOUT</a>
+        <a class="header_button" href="#">TEAM</a>
+        <a class="header_button" href="#">BOOKING</a>
+    </div>
+    <img src="resources/Vector.svg" alt="">
+    <div class="header_right_menu">
+        <a href="#">MENU</a>
+        <a href="#">GALERIE</a>
+        <a href="#">EVENTS</a>
+        <a href="#">CONTACT</a>
+    </div>
+</div>
+<div class="header_left">
+    <p>Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM</p>
+</div>
+<div class="header_center"></div>
+<div class="header_right"></div>
+
+
+header{
+    background-image: url("/resources/header-bg.svg");
+    height: 800px;
+    position: relative;
+}
+.header_main{
+    display: flex;
+    justify-content: space-around;
+}
+.header_main img{
+    margin-top: 25px;
+    width: 150px;
+    height: 150px;
+}
+.header_left_menu, .header_right_menu{
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 530px;
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.header_main .header_left_menu a, .header_main .header_right_menu a{
+    padding-top: 45px;
+}
+
+header .header_left {
+    position: absolute;
+    width: 699px;
+    height: 295px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* transform: rotate(-90deg); */
+    top: 300px;
+    left: -200px;
+    background-color: yellow;
+}
+header .header_left p{
+    text-align: center;
+    transform: translate(0, 50%);
+
+}

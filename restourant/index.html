@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Restaurant Template</title>
+</head>
+<body>
+    <header>
+        <!-- Верхняя часть шапки -->
+        <div class="top_header">
+            <ul class="header_conteiner">
+                <li class="btn"><a href="#" >HOME</a></li>
+                <li class="btn"><a href="#" >ABOUT</a></li>
+                <li class="btn"><a href="#" >TEAM</a></li>
+                <li class="btn"><a href="#" >BOOKING</a></li>
+            </ul>
+            <img src="resources/Vector.svg" alt="">
+            <ul class="header_conteiner">
+             <li class="btn"><a href="#" >MENU</a></li>
+             <li class="btn"><a href="#" >GALERIE</a></li>
+             <li class="btn"><a href="#" >EVENTS</a></li>
+             <li class="btn"><a href="#" >CONTACT</a></li>
+         </ul>
+        </div>
+
+        <!-- Внутренняя часть шапки  -->
+        
+        <div class="center_header">
+            <p>Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM</p>
+            <span class="line_left"></span>
+            <h5> RESTAURANT</h5>
+            <h1>hungry people</h1>
+            <span class="line_center"></span>
+            <span class="yellow_line"></span>
+            <span class="line_right"></span>
+            <div class="center_header_menu">
+                <a href="#" class="button active">BOOK TABLE</a>
+                <a href="#" class="button">EXPLORE</a>
+            </div>
+            <a href = "#"id = "arrow_icon"><i class="fas fa-chevron-circle-left"></i></a>
+            <span id="line_bottom"></span>
+            <div class="center_right">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </header>
+    <!-- Основная часть -->
+    <main>
+        <div class="section_row">
+            <div class="about_us">
+                <h2>about us</h2>
+                <span class="yellow_line"></span>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Nesciunt laborum nisi dignissimos illum inventore a repellendus minima, 
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Nobis tempore cupiditate provident voluptatibus ipsa repudiandae 
+                    beatae dolorem neque quo quasi iste vel excepturi reiciendis 
+                    accusamus impedit eum maiores, asperiores mollitia.</p>
+            </div>
+            <img src="resources/about-img.svg" alt="">
+            <div class="hollow_square">
+            </div>
+        </div>
+        <div class="section_column">
+            <span class="line_left"></span>
+                <span class="line_center"></span>
+                <span class="line_right"></span>
+            <div class="our_team">
+                <h5>OUR TEAM</h5>
+                <div class="master_shef">
+                    <div class="hollow_square"></div>
+                    <img src="resources/Rectangle.svg" alt="">
+                </div>
+                <div class="master_shef_description">
+                    <h2>MASTER CHEF</h2>
+                    <span class="yellow_line"></span>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Nesciunt laborum nisi dignissimos illum inventore a repellendus minima, 
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Nobis tempore cupiditate provident voluptatibus ipsa repudiandae 
+                    beatae dolorem neque quo quasi iste vel excepturi reiciendis 
+                    accusamus impedit eum maiores, asperiores mollitia.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section_row">
+            <div class="book_table">
+                <h2>book a table</h2>
+                <span class="yellow_line"></span>
+                    <div class="form">
+                        <div class="section_column">
+                            <input type="text" placeholder="Name">
+                            <input type="email" placeholder="Email">
+                            <input type="text" placeholder="Phone">
+                        </div>
+                        <div class="section_column" >
+                            <input type="search" placeholder="People">
+                            <input type="text" placeholder="Date (mm/dd)">
+                            <input type="search" placeholder="Time">
+                        </div>
+                    </div>
+                <button class="btn-book">BOOK NOW</button>
+            </div>
+            <img src="resources/book_a_table.svg" alt="">
+            <div class="hollow_square">
+            </div>
+        </div>
+        <div class="section_column">
+            <div style="overflow:hidden;width:100%;position: relative;">
+                <iframe width="100%" height="440" src="https://maps.google.com/maps?width=100%&amp;height=440&amp;hl=en&amp;q=Ukraine%2C%20Vovchansk+(%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                </iframe>
+                <div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
+                    <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/fr/">embedgooglemaps FR</a> & <a href="https://embedinstagramfeed.com">How to embed instagram feed</a></small>
+                </div>
+                <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© Copyright <span>Mindblister</span> 2019</p>
+    </footer>
+</body>
+</html>
