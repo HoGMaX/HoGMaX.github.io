@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="ARTISTIC — an international AI prompt library with visual references.">
+    <meta name="theme-color" content="#11110f">
+    <title>ARTISTIC — Prompt Library</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="logo" href="./">ARTISTIC</a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#prompts">Prompts</a>
+            <a href="#about">About</a>
+            <button id="languageToggle" class="language-toggle" type="button" aria-label="Change language"><span data-lang="en">EN</span><span class="language-divider">/</span><span data-lang="uk">UA</span></button>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <p class="eyebrow" data-i18n="heroEyebrow">CREATIVE PROMPT LIBRARY</p>
+            <h1 data-i18n="heroTitle">Turn your ideas<br>into visual worlds.</h1>
+            <p class="hero-description" data-i18n="heroDescription">A collection of experimental AI prompts, visual references and creative workflows.</p>
+        </div>
+    </section>
+
+    <section id="prompts" class="prompt-section">
+        <div class="container">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow" data-i18n="collectionEyebrow">COLLECTION</p>
+                    <h2 data-i18n="collectionTitle">Prompts</h2>
+                </div>
+                <div class="prompt-count"><span id="promptCount">0</span> <span data-i18n="promptsLabel">prompts</span></div>
+            </div>
+
+            <div class="library-filters" aria-label="Prompt filters">
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="" data-i18n="allCategories">All categories</option>
+                </select>
+                <select id="typeFilter" aria-label="Filter by image orientation">
+                    <option value="" data-i18n="allTypes">All formats</option>
+                    <option value="vertical" data-i18n="vertical">Vertical</option>
+                    <option value="horizontal" data-i18n="horizontal">Horizontal</option>
+                    <option value="square" data-i18n="square">Square</option>
+                </select>
+                <select id="sortFilter" aria-label="Sort prompts">
+                    <option value="order" data-i18n="sortCurated">Curated</option>
+                    <option value="newest" data-i18n="sortNewest">Newest</option>
+                    <option value="title" data-i18n="sortTitle">Title</option>
+                </select>
+                <label class="search-field">
+                    <span aria-hidden="true">⌕</span>
+                    <input id="searchInput" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Search title, tags or description...">
+                </label>
+            </div>
+
+            <div id="activeFilters" class="active-filters" aria-live="polite"></div>
+            <div id="promptGrid" class="prompt-grid"></div>
+            <div id="emptyResults" class="empty-results hidden">
+                <strong data-i18n="noResultsTitle">No prompts found.</strong>
+                <span data-i18n="noResultsText">Try another category, format or search term.</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <p class="eyebrow" data-i18n="aboutEyebrow">ABOUT</p>
+            <h2 data-i18n="aboutTitle">Experimental visual library.</h2>
+            <p data-i18n="aboutText">Original prompts, master references and creative workflows collected in one place.</p>
+        </div>
+    </section>
+
+    <section class="support-section">
+        <div class="container support-card">
+            <p class="eyebrow">SUPPORT</p>
+            <h2 data-i18n="supportTitle">Enjoyed a prompt?</h2>
+            <p data-i18n="supportText">The library is built to stay useful and accessible. Support options will be connected when the public backend is ready.</p>
+            <span class="support-placeholder" data-i18n="supportSoon">SUPPORT COMING SOON</span>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>ARTISTIC</span>
+        <span data-i18n="footerText">Prompt Library</span>
+    </div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
