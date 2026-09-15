@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Cloudflare Wrangler local state
+.wrangler/
+
+# Local environment files
+.env
+.env.*
+!.env.example
