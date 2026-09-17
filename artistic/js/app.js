@@ -44,7 +44,7 @@ function setLanguage(lang) {
     document.documentElement.lang = currentLanguage;
     document.querySelectorAll("[data-i18n]").forEach(el => { const key = el.dataset.i18n; if (I18N[currentLanguage][key]) el.innerHTML = I18N[currentLanguage][key]; });
     document.querySelectorAll("[data-i18n-placeholder]").forEach(el => { const key = el.dataset.i18nPlaceholder; if (I18N[currentLanguage][key]) el.placeholder = I18N[currentLanguage][key]; });
-    languageToggle?.querySelectorAll("[data-lang]").forEach(el => el.classList.toggle("active", el.dataset.lang === currentLanguage));
+    languageToggle?.querySelectorAll("[data-lang]").forEach(el => el.classList.toggle("is-active", el.dataset.lang === currentLanguage));
     renderCategoryOptions();
     renderPrompts();
 }
@@ -83,11 +83,11 @@ function preloadImages(images) { images.slice(0, 8).forEach(item => { const img 
 function startCardCarousel(card, prompt, images) {
     if (images.length < 2) return;
     preloadImages(images);
-    const media = card.querySelector(".prompt-card-media");
-    const image = card.querySelector(".prompt-card-image");
-    const dots = [...card.querySelectorAll(".card-dot")];
-    const prev = card.querySelector(".card-arrow.prev");
-    const next = card.querySelector(".card-arrow.next");
+    const media = card.querySelector(".prompt-card__media");
+    const image = card.querySelector(".prompt-card__image");
+    const dots = [...card.querySelectorAll(".prompt-card__dot")];
+    const prev = card.querySelector(".prompt-card__arrow--previous");
+    const next = card.querySelector(".prompt-card__arrow--next");
     let index = 0;
     let timer = null;
     let touchStartX = null;
@@ -102,7 +102,7 @@ function startCardCarousel(card, prompt, images) {
         image.onload = () => { updateRatio(); requestAnimationFrame(() => image.classList.remove("is-changing")); };
         image.src = imageSrc(images[index]);
         image.alt = text(prompt.title);
-        dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+        dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
     }
     function stop() { if (timer) clearInterval(timer); timer = null; }
     function start() { stop(); if (!paused) timer = setInterval(() => show(index + 1), 4000); }
@@ -131,30 +131,30 @@ function renderPrompts() {
     const prompts = getFilteredPrompts();
     promptCount.textContent = prompts.length;
     promptGrid.replaceChildren();
-    emptyResults.classList.toggle("hidden", prompts.length !== 0);
+    emptyResults.classList.toggle("is-hidden", prompts.length !== 0);
 
     prompts.forEach(prompt => {
         const card = document.createElement("article"); card.className = "prompt-card";
         const images = getImages(prompt);
-        const media = document.createElement("div"); media.className = "prompt-card-media";
-        const image = document.createElement("img"); image.className = "prompt-card-image"; image.src = imageSrc(images[0] || ""); image.alt = text(prompt.title); image.loading = "lazy";
+        const media = document.createElement("div"); media.className = "prompt-card__media";
+        const image = document.createElement("img"); image.className = "prompt-card__image"; image.src = imageSrc(images[0] || ""); image.alt = text(prompt.title); image.loading = "lazy";
         media.appendChild(image);
 
         if (images.length > 1) {
-            const prev = document.createElement("button"); prev.type = "button"; prev.className = "card-arrow prev"; prev.textContent = "‹"; prev.setAttribute("aria-label", I18N[currentLanguage].previous);
-            const next = document.createElement("button"); next.type = "button"; next.className = "card-arrow next"; next.textContent = "›"; next.setAttribute("aria-label", I18N[currentLanguage].next);
+            const prev = document.createElement("button"); prev.type = "button"; prev.className = "prompt-card__arrow prompt-card__arrow--previous"; prev.textContent = "‹"; prev.setAttribute("aria-label", I18N[currentLanguage].previous);
+            const next = document.createElement("button"); next.type = "button"; next.className = "prompt-card__arrow prompt-card__arrow--next"; next.textContent = "›"; next.setAttribute("aria-label", I18N[currentLanguage].next);
             media.append(prev, next);
-            const dots = document.createElement("div"); dots.className = "card-dots";
-            images.forEach((_, i) => { const d = document.createElement("button"); d.type = "button"; d.className = `card-dot${i === 0 ? " active" : ""}`; d.setAttribute("aria-label", `${i + 1}`); dots.appendChild(d); });
+            const dots = document.createElement("div"); dots.className = "prompt-card__dots";
+            images.forEach((_, i) => { const d = document.createElement("button"); d.type = "button"; d.className = `prompt-card__dot${i === 0 ? " active" : ""}`; d.setAttribute("aria-label", `${i + 1}`); dots.appendChild(d); });
             media.appendChild(dots);
-            const count = document.createElement("span"); count.className = "card-image-count"; count.textContent = `${images.length} ${I18N[currentLanguage].images}`; media.appendChild(count);
+            const count = document.createElement("span"); count.className = "prompt-card__image-count"; count.textContent = `${images.length} ${I18N[currentLanguage].images}`; media.appendChild(count);
         }
 
-        const content = document.createElement("div"); content.className = "prompt-card-content";
-        const category = document.createElement("div"); category.className = "prompt-card-category"; category.textContent = prompt.category || "";
-        const title = document.createElement("h3"); title.className = "prompt-card-title"; title.textContent = text(prompt.title);
-        const description = document.createElement("p"); description.className = "prompt-card-description"; description.textContent = text(prompt.description);
-        const link = document.createElement("a"); link.className = "prompt-card-link"; link.href = `prompt.html?id=${encodeURIComponent(prompt.id)}`; link.textContent = I18N[currentLanguage].viewPrompt;
+        const content = document.createElement("div"); content.className = "prompt-card__content";
+        const category = document.createElement("div"); category.className = "prompt-card__category"; category.textContent = prompt.category || "";
+        const title = document.createElement("h3"); title.className = "prompt-card__title"; title.textContent = text(prompt.title);
+        const description = document.createElement("p"); description.className = "prompt-card__description"; description.textContent = text(prompt.description);
+        const link = document.createElement("a"); link.className = "prompt-card__link"; link.href = `prompt.html?id=${encodeURIComponent(prompt.id)}`; link.textContent = I18N[currentLanguage].viewPrompt;
         content.append(category, title, description, link); card.append(media, content); promptGrid.appendChild(card);
         if (images.length > 1) startCardCarousel(card, prompt, images);
     });

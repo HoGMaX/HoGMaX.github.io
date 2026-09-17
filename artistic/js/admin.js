@@ -355,7 +355,7 @@ function renderCategories() {
             document.createElement("div");
 
         empty.className =
-            "empty-state";
+            "admin-state";
 
         empty.textContent =
             "No categories yet. Add your first category.";
@@ -370,13 +370,13 @@ function renderCategories() {
             document.createElement("article");
 
         row.className =
-            "category-row";
+            "category-list__row";
 
         const name =
             document.createElement("div");
 
         name.className =
-            "category-name";
+            "category-list__name";
 
         name.textContent =
             category;
@@ -385,7 +385,7 @@ function renderCategories() {
             document.createElement("div");
 
         usage.className =
-            "category-usage";
+            "category-list__usage";
 
         const count =
             prompts.filter(
@@ -403,7 +403,7 @@ function renderCategories() {
             document.createElement("div");
 
         actions.className =
-            "category-actions";
+            "category-list__actions";
 
         const renameButton =
             createRowButton("RENAME");
@@ -431,7 +431,7 @@ function renderCategories() {
         const deleteButton =
             createRowButton(
                 "DELETE",
-                "delete"
+                "button--delete"
             );
 
         deleteButton.addEventListener(
@@ -539,7 +539,7 @@ function openEditCategoryModal(
 
 
 function openCategoryModal() {
-    categoryModal.classList.add("open");
+    categoryModal.classList.add("is-open");
 
     categoryModal.setAttribute(
         "aria-hidden",
@@ -551,7 +551,7 @@ function openCategoryModal() {
 
 
 function closeCategoryModal() {
-    categoryModal.classList.remove("open");
+    categoryModal.classList.remove("is-open");
 
     categoryModal.setAttribute(
         "aria-hidden",
@@ -709,7 +709,7 @@ function renderMovePromptGrid() {
 
     promptsInSource.forEach((prompt) => {
         const card = document.createElement("label");
-        card.className = "move-prompt-card";
+        card.className = "prompt-move__card";
 
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -717,7 +717,7 @@ function renderMovePromptGrid() {
         checkbox.addEventListener("change", () => {
             if (checkbox.checked) selectedMovePromptIds.add(prompt.id);
             else selectedMovePromptIds.delete(prompt.id);
-            card.classList.toggle("selected", checkbox.checked);
+            card.classList.toggle("is-selected", checkbox.checked);
             updateMoveSelectionUI();
         });
 
@@ -729,23 +729,23 @@ function renderMovePromptGrid() {
             card.appendChild(img);
         } else {
             const empty = document.createElement("div");
-            empty.className = "move-card-no-image";
+            empty.className = "prompt-move__no-image";
             empty.textContent = "NO PREVIEW";
             card.appendChild(empty);
         }
 
         const body = document.createElement("div");
-        body.className = "move-prompt-card-body";
+        body.className = "prompt-move__card-body";
         const title = document.createElement("div");
-        title.className = "move-prompt-card-title";
+        title.className = "prompt-move__card-title";
         title.textContent = prompt.title || "Untitled";
         const id = document.createElement("div");
-        id.className = "move-prompt-card-id";
+        id.className = "prompt-move__card-id";
         id.textContent = prompt.id || "—";
         body.append(title, id);
         card.append(checkbox, body);
 
-        if (checkbox.checked) card.classList.add("selected");
+        if (checkbox.checked) card.classList.add("is-selected");
         movePromptGrid.appendChild(card);
     });
 
@@ -778,13 +778,13 @@ function openMovePromptsModal(category) {
     renderMovePromptGrid();
     updateMoveSelectionUI();
 
-    movePromptsModal.classList.add("open");
+    movePromptsModal.classList.add("is-open");
     movePromptsModal.setAttribute("aria-hidden", "false");
 }
 
 
 function closeMovePromptsModal() {
-    movePromptsModal.classList.remove("open");
+    movePromptsModal.classList.remove("is-open");
     movePromptsModal.setAttribute("aria-hidden", "true");
     moveSourceCategory = null;
     selectedMovePromptIds = new Set();
@@ -895,7 +895,7 @@ function openCategoryActionModal(
         categoryTargetSelect.value = targets[0];
     }
 
-    categoryActionModal.classList.add("open");
+    categoryActionModal.classList.add("is-open");
 
     categoryActionModal.setAttribute(
         "aria-hidden",
@@ -914,14 +914,14 @@ function openMoveCategoryModal(category) {
 
 function openDeleteCategoryModal(category) {
     openCategoryActionModal(
-        "delete",
+        "button--delete",
         category
     );
 }
 
 
 function closeCategoryActionModal() {
-    categoryActionModal.classList.remove("open");
+    categoryActionModal.classList.remove("is-open");
 
     categoryActionModal.setAttribute(
         "aria-hidden",
@@ -961,7 +961,7 @@ function confirmCategoryAction() {
     if (usageCount === 0) {
         closeCategoryActionModal();
 
-        if (categoryActionMode === "delete") {
+        if (categoryActionMode === "button--delete") {
             deleteEmptyCategory(
                 sourceCategory
             );
@@ -971,7 +971,7 @@ function confirmCategoryAction() {
     }
 
     if (
-        categoryActionMode === "delete"
+        categoryActionMode === "button--delete"
     ) {
         const confirmed =
             window.confirm(
@@ -998,7 +998,7 @@ function confirmCategoryAction() {
     });
 
     if (
-        categoryActionMode === "delete"
+        categoryActionMode === "button--delete"
     ) {
         categories =
             categories.filter(
@@ -1228,7 +1228,7 @@ function renderPrompts() {
             document.createElement("div");
 
         empty.className =
-            "empty-state";
+            "admin-state";
 
         empty.textContent =
             "No prompts yet. Add your first prompt.";
@@ -1246,19 +1246,19 @@ function renderPrompts() {
             document.createElement("article");
 
         row.className =
-            "prompt-row";
+            "admin-prompt-row";
 
         const main =
             document.createElement("div");
 
         main.className =
-            "prompt-main";
+            "admin-prompt-row__main";
 
         const title =
             document.createElement("div");
 
         title.className =
-            "prompt-title";
+            "admin-prompt-row__title";
 
         title.textContent =
             prompt.title || "Untitled";
@@ -1267,7 +1267,7 @@ function renderPrompts() {
             document.createElement("div");
 
         id.className =
-            "prompt-id";
+            "admin-prompt-row__id";
 
         id.textContent =
             prompt.id || "—";
@@ -1278,7 +1278,7 @@ function renderPrompts() {
             document.createElement("div");
 
         category.className =
-            "prompt-meta";
+            "admin-prompt-row__meta";
 
         category.textContent =
             prompt.category || "—";
@@ -1287,7 +1287,7 @@ function renderPrompts() {
             document.createElement("div");
 
         order.className =
-            "prompt-order";
+            "admin-prompt-row__order";
 
         order.textContent =
             `#${Number(prompt.order) || 0}`;
@@ -1296,17 +1296,17 @@ function renderPrompts() {
             document.createElement("div");
 
         actions.className =
-            "prompt-actions";
+            "admin-prompt-row__actions";
 
         const status =
             document.createElement("span");
 
         status.className =
-            "prompt-status";
+            "admin-prompt-row__status";
 
         if (prompt.published !== false) {
             status.classList.add(
-                "published"
+                "is-published"
             );
 
             status.textContent =
@@ -1353,7 +1353,7 @@ function renderPrompts() {
         const deleteButton =
             createRowButton(
                 "DELETE",
-                "delete"
+                "button--delete"
             );
 
         deleteButton.addEventListener(
@@ -1398,7 +1398,7 @@ function createRowButton(
         "button";
 
     button.className =
-        `row-button ${extraClass}`.trim();
+        `button--row ${extraClass}`.trim();
 
     button.textContent =
         label;
@@ -1636,7 +1636,7 @@ function openEditModal(id) {
 
 
 function openModal() {
-    modal.classList.add("open");
+    modal.classList.add("is-open");
 
     modal.setAttribute(
         "aria-hidden",
@@ -1644,14 +1644,14 @@ function openModal() {
     );
 
     document.body.style.overflow =
-        "hidden";
+        "is-hidden";
 
     titleInput.focus();
 }
 
 
 function closeModal() {
-    modal.classList.remove("open");
+    modal.classList.remove("is-open");
 
     modal.setAttribute(
         "aria-hidden",
@@ -1700,13 +1700,13 @@ async function renderImageEditor() {
     imageGalleryEditor.replaceChildren();
 
     if (!selectedImages.length) {
-        imageGalleryEditor.classList.add("hidden");
-        imageEmptyState.classList.remove("hidden");
+        imageGalleryEditor.classList.add("is-hidden");
+        imageEmptyState.classList.remove("is-hidden");
         return;
     }
 
-    imageEmptyState.classList.add("hidden");
-    imageGalleryEditor.classList.remove("hidden");
+    imageEmptyState.classList.add("is-hidden");
+    imageGalleryEditor.classList.remove("is-hidden");
 
     const snapshot = [...selectedImages];
 
@@ -1722,23 +1722,23 @@ async function renderImageEditor() {
         if (snapshot[index] !== selectedImages[index]) continue;
 
         const card = document.createElement("div");
-        card.className = "image-editor-card";
+        card.className = "image-uploader__card";
 
         const img = document.createElement("img");
         img.src = src || "";
         img.alt = item.name || `Master image ${index + 1}`;
 
         const meta = document.createElement("div");
-        meta.className = "image-editor-meta";
+        meta.className = "image-uploader__card-meta";
 
         const name = document.createElement("span");
-        name.className = "image-editor-name";
+        name.className = "image-uploader__card-name";
         name.textContent = item.name || `Master image ${index + 1}`;
         name.title = name.textContent;
 
         const remove = document.createElement("button");
         remove.type = "button";
-        remove.className = "image-remove";
+        remove.className = "image-uploader__remove";
         remove.textContent = "REMOVE";
         remove.addEventListener("click", (event) => {
             event.stopPropagation();
@@ -2220,17 +2220,17 @@ function openQrModal(prompt) {
     } else {
         const fallback = document.createElement("p");
         fallback.textContent = "QR library could not be loaded. The link is still available below.";
-        fallback.className = "qr-help";
+        fallback.className = "qr-modal__help";
         qrCode.appendChild(fallback);
     }
 
-    qrModal.classList.add("open");
+    qrModal.classList.add("is-open");
     qrModal.setAttribute("aria-hidden", "false");
 }
 
 
 function closeQrModal() {
-    qrModal.classList.remove("open");
+    qrModal.classList.remove("is-open");
     qrModal.setAttribute("aria-hidden", "true");
     activeQrPrompt = null;
 }
@@ -2448,7 +2448,7 @@ imageFileInput.addEventListener(
     () => handleImageFiles(imageFileInput.files)
 );
 
-["dragenter", "dragover"].forEach(
+["dragenter", "is-dragover"].forEach(
     (eventName) => {
         imageDropzone.addEventListener(
             eventName,
@@ -2456,7 +2456,7 @@ imageFileInput.addEventListener(
                 event.preventDefault();
 
                 imageDropzone.classList.add(
-                    "dragover"
+                    "is-dragover"
                 );
             }
         );
@@ -2471,7 +2471,7 @@ imageFileInput.addEventListener(
                 event.preventDefault();
 
                 imageDropzone.classList.remove(
-                    "dragover"
+                    "is-dragover"
                 );
             }
         );
@@ -2489,7 +2489,7 @@ document.addEventListener(
     (event) => {
         if (
             event.key === "Escape" &&
-            modal.classList.contains("open")
+            modal.classList.contains("is-open")
         ) {
             closeModal();
         }
@@ -2497,7 +2497,7 @@ document.addEventListener(
         if (
             event.key === "Escape" &&
             categoryModal.classList.contains(
-                "open"
+                "is-open"
             )
         ) {
             closeCategoryModal();
