@@ -1,6 +1,13 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "artistic-api",
-  "main": "src/index.js",
-  "compatibility_date": "2026-09-15"
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "artistic-api",
+	"main": "src/index.js",
+	"compatibility_date": "2026-09-15",
+	"d1_databases": [
+		{
+			"binding": "artistic_db",
+			"database_name": "artistic-db",
+			"database_id": "36e4c56b-5dce-4aac-9a57-6e302f6f3122"
+		}
+	]
 }
