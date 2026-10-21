@@ -147,6 +147,9 @@ body {
 
 .prompt-gallery__main {
     position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 0 0;
     overflow: hidden;
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -156,9 +159,11 @@ body {
 
 .prompt-gallery__image {
     width: 100%;
+    //max-width: 700px;
+    //max-height: 650px;
     height: auto;
-    max-height: none;
     display: block;
+    margin: 0 auto;
     object-fit: contain;
     background: #222;
     transition: opacity .22s ease, transform .22s ease;
@@ -400,7 +405,7 @@ body {
     }
 
     .prompt-gallery__image {
-        max-height: none;
+        max-height: 650px;
     }
 
     .prompt-gallery__arrow {

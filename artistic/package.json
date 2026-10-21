@@ -1,11 +1,15 @@
 {
     "scripts": {
-      "build:admin": "sass css/admin.scss css/admin.css && sass css/admin.scss css/admin.min.css --style=compressed",
-      "build:prompt": "sass css/prompt.scss css/prompt.css && sass css/prompt.scss css/prompt.min.css --style=compressed",
-      "build:style": "sass css/style.scss css/style.css && sass css/style.scss css/style.min.css --style=compressed",
-      "build:css": "npm run build:admin && npm run build:prompt && npm run build:style"
+        "dev": "gulp",
+        "build": "gulp build"
     },
-  "devDependencies": {
-    "sass": "^1.104.1"
-  }
+    "devDependencies": {
+        "browser-sync": "^3.0.4",
+        "gulp": "^5.0.1",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-rename": "^2.1.0",
+        "gulp-sass": "^6.0.1",
+        "gulp-sourcemaps": "^3.0.0",
+        "sass": "^1.106.0"
+    }
 }
